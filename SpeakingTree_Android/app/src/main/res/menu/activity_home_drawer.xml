@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+    <item android:title="Blogs"
+        android:id="@+id/nav_item_blogs"
+       />
+
+    <item android:title="Forums"
+        android:id="@+id/nav_item_forum"/>
+
+    <item android:title="article"
+        android:id="@+id/nav_item_article"/>
+
+    <item android:title="Events"
+        android:id="@+id/nav_item_events"
+        />
+
+    <item android:title="Masters"
+        android:id="@+id/nav_item_master"
+       />
+    <item android:title="Seekers"
+        android:id="@+id/nav_item_seeker"/>
+
+    <item android:title="Photos"
+        android:id="@+id/nav_item_photos"/>
+
+    <item android:title="Videos"
+        android:id="@+id/nav_item_Videos"
+        />
+
+    <group android:id="@+id/group_settings_id">
+        <item android:title="Settings"
+            android:icon="@drawable/ic_menu_manage"/>
+
+            android:icon="@drawable/ic_menu_share"/>
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
 
 </menu>
