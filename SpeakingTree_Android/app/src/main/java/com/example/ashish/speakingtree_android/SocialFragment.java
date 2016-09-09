@@ -15,7 +15,7 @@ import com.example.ashish.speakingtree_android.Model.Update;
 import java.util.ArrayList;
 
 /**
- * Created by Ratan on 7/29/2015.
+ * Created by Ashish on 7/29/2015.
  */
 public class SocialFragment extends Fragment {
 

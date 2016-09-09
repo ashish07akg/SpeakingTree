@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ashish.speakingtree_android.Enum.SignUpResponse;
@@ -28,6 +29,7 @@ public class SignupActivity extends AppCompatActivity implements OnAsyncTaskHand
     Button btnSignUp;
     String strUrl;
     String strResponse;
+    TextView tvSign;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,14 @@ public class SignupActivity extends AppCompatActivity implements OnAsyncTaskHand
         txtPassword = (EditText) this.findViewById(R.id.txtPassword);
         txtRepasswprd = (EditText) this.findViewById(R.id.txtReenterpassword);
         btnSignUp = (Button) this.findViewById(R.id.btnSignUp);
+        tvSign=(TextView)this.findViewById(R.id.tvSign) ;
+        tvSign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentSignIn = new Intent(getApplicationContext(),LoginActivity.class);
+                startActivity(intentSignIn);
+            }
+        });
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +59,7 @@ public class SignupActivity extends AppCompatActivity implements OnAsyncTaskHand
                   {
                       try {
                           URL urlToRequest = new URL(strUrl);
-                          CustomAsyncTask asyncTask = new CustomAsyncTask(v.getContext(), ApiIdentifier.SIGNUP_API);
+                          CustomAsyncTask asyncTask = new CustomAsyncTask(v.getContext(), ApiIdentifier.SIGNUP_API,false);
                           asyncTask.setOnAsyncTaskHandler(SignupActivity.this);
                           asyncTask.execute(urlToRequest);
 

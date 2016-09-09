@@ -35,10 +35,7 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         // Populate the data into the template view using the data object
         tvTitle.setText(ArticleList.getDescription());
         ImageView imgmaster= (ImageView)convertView.findViewById(R.id.imageViewMaster);
-            Picasso.with(getContext()).load(ArticleList.getThumbnail()).into(imgmaster);
-
-
-
+        Picasso.with(getContext()).load(ArticleList.getThumbnail()).into(imgmaster);
         // Return the completed view to render on screen
         return convertView;
     }

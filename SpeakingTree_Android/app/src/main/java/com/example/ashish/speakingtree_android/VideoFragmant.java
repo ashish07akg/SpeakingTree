@@ -29,6 +29,7 @@ public class VideoFragmant extends Fragment  {
         View view= inflater.inflate(R.layout.video_layout,null);
         Bundle bundle = getArguments();
         artSatsang = bundle.getParcelableArrayList("VideoList");
+       //
         Log.e("size", "size" + artSatsang.size());
         if (artSatsang != null) {
 

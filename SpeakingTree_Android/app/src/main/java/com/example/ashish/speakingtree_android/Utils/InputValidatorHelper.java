@@ -26,9 +26,6 @@ public class InputValidatorHelper {
             //PATTERN = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,20})";
             PATTERN = "^[a-zA-Z]\\w{5,19}$";
         }
-
-
-
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher matcher = pattern.matcher(string);
         return matcher.matches();

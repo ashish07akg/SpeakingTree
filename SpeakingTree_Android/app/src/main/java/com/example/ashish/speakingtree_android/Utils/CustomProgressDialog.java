@@ -14,6 +14,7 @@ public class CustomProgressDialog {
         if(progressDialog == null){
             progressDialog= new ProgressDialog(context);
             progressDialog.setTitle("Loading");
+            progressDialog.setCancelable(false);
             progressDialog.setMessage("Please wait");
         }
         progressDialog.show();
@@ -23,6 +24,7 @@ public class CustomProgressDialog {
         if(progressDialog == null){
             progressDialog= new ProgressDialog(context);
             progressDialog.setTitle(title);
+            progressDialog.setCancelable(false);
             progressDialog.setMessage(msg);
         }
         progressDialog.show();

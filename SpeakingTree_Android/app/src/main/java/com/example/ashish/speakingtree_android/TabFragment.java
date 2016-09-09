@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.android.volley.VolleyError;
 import com.example.ashish.speakingtree_android.Model.Article;
 import com.example.ashish.speakingtree_android.Model.Blog;
 import com.example.ashish.speakingtree_android.Model.Example;
@@ -72,20 +71,22 @@ public class TabFragment extends BaseFragment {
 
 private void GetOfflineHomeData()
 {
+    onLoaderStart();
     CacheHomeData offlinehomedata= CacheHomeData.getInstance(getContext());
     String getHomejson=offlinehomedata.GetData("HomeData");
+
     if (getHomejson == null || getHomejson.isEmpty()) {
         Toast.makeText(getContext(), "Not connected to Internet", Toast.LENGTH_LONG).show();
         return;
     } else {
         // handle the value
-        Gson gson = new Gson();
-        value = gson.fromJson(getHomejson.toString(), Example.class);
-        Log.i("test", "size : " + value.getArticle().size());
-        viewPager.setAdapter(new MyAdapter(getChildFragmentManager()));
-        Log.e("Success", getHomejson.toString());
-
     }
+    Gson gson = new Gson();
+    value = gson.fromJson(getHomejson.toString(), Example.class);
+    Log.i("test", "size : " + value.getArticle().size());
+    viewPager.setAdapter(new MyAdapter(getChildFragmentManager()));
+    Log.e("Success", getHomejson.toString());
+    onLoaderDismiss();
 }
 
     private void getHomeData() {
@@ -112,6 +113,7 @@ private void GetOfflineHomeData()
                 viewPager.setAdapter(new MyAdapter(getChildFragmentManager()));
                 Log.e("Success", response.toString());
                 SaveHomeData("HomeData",response.toString());
+
                 onLoaderDismiss();
                 break;
         }
@@ -137,11 +139,6 @@ super.onLoaderDismiss();
         {
             progress.dismiss();
         }
-    }
-
-    @Override
-    public void onFailure(VolleyError error, int requestId) {
-        super.onFailure(error, requestId);
     }
 
     class MyAdapter extends FragmentPagerAdapter {

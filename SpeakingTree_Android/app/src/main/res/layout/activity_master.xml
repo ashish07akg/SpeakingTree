@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    tools:context="com.example.ashish.speakingtree_android.MasterActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"  android:scaleType="fitXY" android:id="@+id/imgHeader"  android:src="@drawable/titlebar" />
+    <android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipeContainer"
+        android:layout_width="match_parent" android:layout_below="@+id/imgHeader"
+        android:layout_height="match_parent">
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gridViewMaster"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:numColumns="auto_fit"
+        android:gravity="center"
+        android:columnWidth="150dp"
+        android:stretchMode="columnWidth"
+        android:horizontalSpacing="10dp"
+        android:verticalSpacing="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </GridView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</RelativeLayout>
